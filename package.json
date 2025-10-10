@@ -1,0 +1,41 @@
+{
+  "name": "nest-perf-analyzer",
+  "version": "0.1.0",
+  "description": "Benchmark REST/GraphQL endpoints (NestJS-friendly) with JSON/CSV output for p50/p75/p90/p99, throughput, and error rate.",
+  "bin": {
+    "npa": "./dist/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/index.ts",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "nest",
+    "nestjs",
+    "graphql",
+    "benchmark",
+    "latency",
+    "p75",
+    "p90",
+    "p99",
+    "cloud-run",
+    "api",
+    "cli"
+  ],
+  "author": "Amin Safaei <amin.safaei.j@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^22.18.9",
+    "autocannon": "^8.0.0",
+    "commander": "^13.1.0",
+    "fast-json-stringify": "^5.16.1"
+  },
+  "devDependencies": {
+    "@types/autocannon": "^7.12.7",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.15.7",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,4 @@
+# Minimal example query (adjust to your schema)
+query Health {
+  __typename
+}
