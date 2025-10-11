@@ -1,8 +1,24 @@
 # nest-perf-analyzer
 
+[![npm](https://img.shields.io/npm/v/nest-perf-analyzer.svg)](https://www.npmjs.com/package/nest-perf-analyzer)
 [![CI](https://github.com/aminsf/nest-perf-analyzer/actions/workflows/ci.yml/badge.svg)](https://github.com/aminsf/nest-perf-analyzer/actions/workflows/ci.yml)
+[![license](https://img.shields.io/badge/license-MIT-green.svg)](#)
 
 Tiny CLI to benchmark REST/GraphQL endpoints. Prints **p50 / p90 / p97.5 / p99**, throughput, and error rate as JSON; can also append a **CSV** row for charts/CI.
+
+## Install
+
+global:
+
+```bash
+npm i -g nest-perf-analyzer
+```
+
+or run once:
+
+```bash
+npx nest-perf-analyzer --help
+```
 
 ## Install (local dev)
 
