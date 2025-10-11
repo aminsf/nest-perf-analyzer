@@ -1,0 +1,3 @@
+query Sleep($ms: Int!) {
+  sleep(ms: $ms)
+}

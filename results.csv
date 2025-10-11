@@ -1,0 +1,4 @@
+url,duration,rps,concurrency,timestamp,p50,p90,p97_5,p99,throughput,totalRequests,errors,errorRate
+http://localhost:3000/health,10,30,10,2025-10-11T13:40:31.113Z,2,4,6,7,30,300,0,0
+http://localhost:3000/graphql,10,20,10,2025-10-11T13:41:17.879Z,3,8,11,13,20.11,201,0,0
+http://localhost:3000/graphql,10,20,10,2025-10-11T13:42:01.740Z,6,12,16,18,20,200,0,0
