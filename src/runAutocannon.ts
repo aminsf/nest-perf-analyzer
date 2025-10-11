@@ -69,8 +69,8 @@ async function runOnce(opts: RunOptions, extra: Extra = {}) {
 
         const metrics = {
           p50: safeNum(result.latency?.p50),
-          p75: safeNum(result.latency?.p75),
           p90: safeNum(result.latency?.p90),
+          p97_5: safeNum(result.latency?.p97_5),
           p99: safeNum(result.latency?.p99),
           throughput: safeNum(result.requests?.average),
           totalRequests: total,

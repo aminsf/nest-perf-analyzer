@@ -1,6 +1,8 @@
-# nest-perf-analyzer (starter)
+# nest-perf-analyzer
 
-Tiny CLI to benchmark REST/GraphQL endpoints. Reports p50/p75/p90/p99, throughput and error rate. Outputs JSON to stdout (and optional CSV).
+[![CI](https://github.com/aminsf/nest-perf-analyzer/actions/workflows/ci.yml/badge.svg)](https://github.com/aminsf/nest-perf-analyzer/actions/workflows/ci.yml)
+
+Tiny CLI to benchmark REST/GraphQL endpoints. Prints **p50 / p90 / p97.5 / p99**, throughput, and error rate as JSON; can also append a **CSV** row for charts/CI.
 
 ## Install (local dev)
 
@@ -16,36 +18,74 @@ npm run build
 node dist/index.js --help
 ```
 
-## Examples
+## Usage
 
 REST:
 
 ```bash
-npa rest --url https://httpbin.org/get --duration 15 --rps 50 --concurrency 20
+node dist/index.js rest --url https://httpbin.org/get --duration 10 --rps 30 --concurrency 10
 ```
 
 GraphQL:
 
 ```bash
-npa gql --url https://example.com/graphql --query ./examples/query.graphql --duration 20 --rps 25 --concurrency 10
+node dist/index.js gql --url https://example.com/graphql --query ./examples/query.graphql --duration 10 --rps 20 --concurrency 10
 ```
 
-Add headers (repeatable):
+Headers (repeat `--header`):
 
 ```bash
-npa rest --url https://httpbin.org/anything --header Authorization:Bearer_TOKEN --header X-Env:staging
+node dist/index.js rest --url https://httpbin.org/anything --header Authorization:Bearer_TOKEN --header X-Env:staging
 ```
 
-## CSV
+CSV:
 
 ```bash
-npa rest --url https://httpbin.org/get --duration 10 --rps 30 --csv results.csv
+node dist/index.js rest --url https://httpbin.org/get --duration 10 --rps 30 --csv results.csv
 ```
+
+## Example JSON output
+
+```json
+{
+  "meta": {
+    "url": "https://httpbin.org/get",
+    "duration": 10,
+    "rps": 30,
+    "concurrency": 20,
+    "timestamp": "..."
+  },
+  "metrics": {
+    "p50": 557,
+    "p90": 1720,
+    "p97_5": 5682,
+    "p99": 7617,
+    "throughput": 14.1,
+    "totalRequests": 141,
+    "errors": 0,
+    "errorRate": 0
+  }
+}
+```
+
+## Why?
+
+- Tail latency matters more than averages, this tool gives you **p90/p97.5/p99** quickly.
+- Outputs **JSON** for scripts/dashboards and **CSV** for spreadsheets.
+- Lightweight defaults so you can reproduce results and share them publicly.
 
 ## Roadmap
 
 - HTML report with charts
 - Auth helpers / token refresh
-- GQL persisted queries example
+- GQL persisted queries & variables
 - Multiple endpoints matrix run
-- k6/autocannon adapters
+- k6/autocannon interchangeable engines
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). Good first issues are tagged in the tracker.
+
+## License
+
+MIT © Amin Safaei
