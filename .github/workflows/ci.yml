@@ -17,3 +17,4 @@ jobs:
       - run: npm ci || npm i
       - run: npm run build
       - run: node dist/index.js --help
+      - run: node dist/index.js rest --url https://httpbin.org/get --duration 3 --rps 5
