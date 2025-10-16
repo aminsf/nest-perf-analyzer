@@ -7,7 +7,7 @@ const program = new Command();
 program
   .name("npa")
   .description("nest-perf-analyzer — benchmark REST/GraphQL endpoints")
-  .version("0.1.1");
+  .version("0.2.0");
 
 program
   .command("rest")

@@ -1,6 +1,6 @@
 {
   "name": "nest-perf-analyzer",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Benchmark REST/GraphQL endpoints with JSON/CSV output for p50/p90/p97.5/p99, throughput, and error rate.",
   "bin": {
     "npa": "./dist/index.js"

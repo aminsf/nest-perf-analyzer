@@ -98,6 +98,10 @@ node dist/index.js rest --url https://httpbin.org/get --duration 10 --rps 30 --c
 - Multiple endpoints matrix run
 - k6/autocannon interchangeable engines
 
+## Used by
+
+- Your project here (PR welcome to add your company/project name)
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Good first issues are tagged in the tracker.
